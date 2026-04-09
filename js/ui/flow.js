@@ -10,7 +10,7 @@ import { createEnemy } from '../entities/enemies.js';
 import { createVehicle, spawnDriveableVehicle } from '../entities/vehicles.js';
 import { createAllyVehicle } from '../entities/allies.js';
 import { spawnItem, spawnLore } from '../entities/items.js';
-import { setupTouchControls, hideTouchControls } from '../input/touch.js';
+import { showTouchControls, hideTouchControls } from '../input/touch.js';
 
 const PI = Math.PI;
 
@@ -112,11 +112,20 @@ export function launchLevel() {
   }
   
   updateHUD();
-  setupTouchControls();
-  
-  if (!G.isTouch) {
-    G.renderer.domElement.requestPointerLock();
+  showTouchControls();
+
+  // Failsafe timestamps for the stuck-level detector and the reliable gunshot-alert check.
+  if (G.clock) {
+    const now = G.clock.getElapsedTime();
+    G.levelStartTime = now;
+    G.lastKillTime = now;
+    G.lastAttackTime = -100;
   }
+  // Record the initial enemy count so the failsafe knows what "almost cleared" means.
+  G.initialEnemyCount = G.enemies.filter(e => e.health > 0).length;
+  // Pointer lock is NOT requested here. The click-based handler in keyboard-mouse.js
+  // acquires it on the player's first left-click, which is the normal FPS pattern and
+  // avoids "SecurityError: requestPointerLock() without a user gesture" warnings.
 }
 
 export function checkLevelComplete() {

@@ -1,4 +1,6 @@
 // Touch controls: virtual joystick, look-drag, touch action buttons.
+// Listener binding happens once (setupTouchControls). Visibility is toggled per-level
+// via showTouchControls / hideTouchControls so listeners never stack up.
 import { G } from '../state.js';
 import { WEAPON_DATA } from '../data/weapons.js';
 import { attack } from '../combat/attack.js';
@@ -10,11 +12,20 @@ const PI = Math.PI;
 let joyTouchId = null, lookTouchId = null;
 let ltX = 0, ltY = 0;
 
-export function setupTouchControls() {
+const TOUCH_BTN_IDS = ['btn-attack','btn-block','btn-dodge','btn-ranged','btn-weapon'];
+
+export function showTouchControls() {
   if (!G.isTouch) return;
   document.getElementById('joystickArea').classList.add('active');
-  ['btn-attack','btn-block','btn-dodge','btn-ranged','btn-weapon'].forEach(id => document.getElementById(id).classList.add('active'));
-  
+  TOUCH_BTN_IDS.forEach(id => document.getElementById(id).classList.add('active'));
+}
+
+export function setupTouchControls() {
+  // Bind listeners only once, even if called multiple times. Prevents the stacking
+  // bug where each level launch added another copy of every touch listener.
+  if (G.touchBound) return;
+  G.touchBound = true;
+
   const jArea = document.getElementById('joystickArea');
   const jKnob = document.getElementById('joystickKnob');
   
@@ -88,5 +99,5 @@ export function setupTouchControls() {
 
 export function hideTouchControls() {
   document.getElementById('joystickArea').classList.remove('active');
-  ['btn-attack','btn-block','btn-dodge','btn-ranged','btn-weapon'].forEach(id => document.getElementById(id).classList.remove('active'));
+  TOUCH_BTN_IDS.forEach(id => document.getElementById(id).classList.remove('active'));
 }

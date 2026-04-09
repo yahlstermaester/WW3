@@ -51,6 +51,11 @@ export function setupInput() {
     if (e.button === 2) { rightMouseDown = false; G.blocking = false; }
   });
   document.addEventListener('contextmenu', e => e.preventDefault());
-  
-  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) G.isTouch = true;
+
+  // Clear stuck keys and block state when the window loses focus.
+  // Fixes the "hold W → Alt-Tab → release W outside → come back still walking" bug.
+  window.addEventListener('blur', () => {
+    G.keys = {};
+    G.blocking = false;
+  });
 }

@@ -7,15 +7,39 @@ import { allyShoot } from '../entities/allies.js';
 import { damageEnemy, killEnemy, playerTakeDamage } from '../combat/damage.js';
 import { checkItems } from '../entities/items.js';
 import { updateHUD } from '../ui/hud.js';
+import { checkLevelComplete } from '../ui/flow.js';
 
 const PI = Math.PI;
 
 export function update(dt) {
   if (!G.inGame || G.paused || !G.alive) return;
-  
+
   // Cooldowns
   if (G.attackCooldown > 0) G.attackCooldown -= dt;
   if (G.dodgeCooldown > 0) G.dodgeCooldown -= dt;
+
+  // Level-complete failsafe: force-kill stragglers when the player has already cleared
+  // almost everything but the level won't finish (classic "enemy wedged in geometry").
+  // All four conditions must hold so we don't fire on someone just exploring slowly.
+  if (G.clock) {
+    const now = G.clock.getElapsedTime();
+    const alive = G.enemies.filter(e => e.health > 0).length;
+    const aliveVehicles = G.vehicles.filter(v => v.health > 0).length;
+    const noKillsFor = now - G.lastKillTime;
+    const levelAge = now - G.levelStartTime;
+    if (
+      alive > 0 &&
+      aliveVehicles === 0 &&
+      noKillsFor > 60 &&
+      levelAge > 60 &&
+      G.initialEnemyCount > 0 &&
+      alive < G.initialEnemyCount * 0.25
+    ) {
+      G.enemies.forEach(e => { if (e.health > 0) e.health = 0; });
+      G.lastKillTime = now;
+      checkLevelComplete();
+    }
+  }
   
   // Stamina regen
   if (G.stamina < 100 && !G.blocking) G.stamina = Math.min(100, G.stamina + 15 * dt);
@@ -101,8 +125,9 @@ export function update(dt) {
     
     // === ALERT SYSTEM — stationary until alerted ===
     if (!e.alerted) {
-      // Alerted by: player within 15 units, or gunshot within 40 units
-      if (dist < 15 || (G.attackCooldown > 0 && G.attackCooldown < 0.1 && dist < 40)) {
+      // Alerted by: player within 15 units, or a gunshot in the last 0.5s within 40 units
+      const timeSinceAttack = G.clock ? (G.clock.getElapsedTime() - G.lastAttackTime) : 100;
+      if (dist < 15 || (timeSinceAttack < 0.5 && dist < 40)) {
         e.alerted = true;
         // Alert nearby enemies too
         G.enemies.forEach(other => {

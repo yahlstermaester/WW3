@@ -120,6 +120,7 @@ export function killEnemy(e) {
     const types = ['food', 'scrap', 'bullets', 'medkit'];
     spawnItem(deathPos.x, deathPos.z, types[Math.floor(Math.random()*types.length)]);
   }
+  if (G.clock) G.lastKillTime = G.clock.getElapsedTime();
   checkLevelComplete();
   updateHUD();
 }

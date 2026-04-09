@@ -10,7 +10,9 @@ export function attack() {
   if (G.attackCooldown > 0 || !G.alive) return;
   const wp = WEAPON_DATA[G.weapons[G.currentWeapon]];
   G.attackCooldown = wp.speed;
-  
+  // Reliable "player just attacked" signal for enemy alert AI (replaces the cooldown-window hack)
+  if (G.clock) G.lastAttackTime = G.clock.getElapsedTime();
+
   if (wp.type === 'ranged') {
     const ammoKey = wp.ammoKey;
     if ((G.ammo[ammoKey] || 0) <= 0) return;

@@ -137,7 +137,8 @@ export function killVehicle(v) {
   // Drop good loot
   spawnItem(v.mesh.position.x, v.mesh.position.z, 'bullets');
   if (Math.random() > 0.3) spawnItem(v.mesh.position.x + 1, v.mesh.position.z, 'medkit');
-  
+
+  if (G.clock) G.lastKillTime = G.clock.getElapsedTime();
   checkLevelComplete();
   updateHUD();
 }

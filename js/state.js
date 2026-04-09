@@ -15,7 +15,13 @@ export const G = {
   keys: {}, isTouch: false, isBoss: false,
   attackCooldown: 0, dodgeCooldown: 0, blocking: false,
   driving: null, // reference to vehicle being driven
-  killStreak: 0
+  killStreak: 0,
+  // Timing fields used by enemy alert + level-complete failsafe (clock-based seconds)
+  lastAttackTime: -100, lastKillTime: 0, levelStartTime: 0,
+  // Initial enemy count for the stuck-level failsafe ("kill almost all but 1 wedged enemy")
+  initialEnemyCount: 0,
+  // Guard to prevent touch listeners from being bound more than once
+  touchBound: false
 };
 
 // Three.js objects live on G (were top-level vars in the original single-file version)
