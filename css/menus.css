@@ -18,6 +18,12 @@
 .cutscene-text { font-size: 1rem; line-height: 1.8; color: #c4a882; min-height: 100px; }
 .cutscene-speaker { font-family: 'Share Tech Mono', monospace; color: #d4a054; font-size: 0.9rem; margin-bottom: 0.5em; }
 
+/* CONTROLS SCREEN */
+.controls-section { margin-bottom: 1em; text-align: left; }
+.controls-heading { font-family: 'Share Tech Mono', monospace; font-size: 0.75rem; color: #d4a054; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.4em; border-bottom: 1px solid rgba(212,160,84,0.15); padding-bottom: 4px; }
+.controls-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 0.85rem; color: #c4a882; }
+.controls-row .key { font-family: 'Share Tech Mono', monospace; color: #d4a054; min-width: 100px; background: rgba(212,160,84,0.08); padding: 2px 8px; border: 1px solid rgba(212,160,84,0.2); text-align: center; font-size: 0.75rem; }
+
 /* GAME OVER / LEADERBOARD */
 .leaderboard { margin: 1em 0; text-align: left; }
 .lb-entry { display: flex; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid rgba(212,160,84,0.1); font-family: 'Share Tech Mono', monospace; font-size: 0.85rem; }

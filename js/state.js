@@ -13,7 +13,7 @@ export const G = {
   skills: { strength: 0, speed: 0, defense: 0 },
   moveDir: { x: 0, z: 0 }, lookDir: { x: 0, y: 0 },
   keys: {}, isTouch: false, isBoss: false,
-  attackCooldown: 0, dodgeCooldown: 0, blocking: false,
+  attackCooldown: 0, dodgeCooldown: 0, blocking: false, sprinting: false,
   driving: null, // reference to vehicle being driven
   killStreak: 0,
   // Timing fields used by enemy alert + level-complete failsafe (clock-based seconds)

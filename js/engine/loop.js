@@ -86,7 +86,14 @@ export function update(dt) {
     });
   } else {
     // === ON FOOT MOVEMENT ===
-    const speed = (5 + G.skills.speed) * dt;
+    // Sprint: 1.7x speed while Shift held, drains stamina. Stops when stamina bottoms out.
+    let sprintMult = 1;
+    if (G.sprinting && G.stamina > 0 && !G.blocking) {
+      sprintMult = 1.7;
+      G.stamina = Math.max(0, G.stamina - 25 * dt); // costs 25 stamina/sec
+    }
+    if (G.stamina <= 0) G.sprinting = false; // can't sprint on empty
+    const speed = (5 + G.skills.speed) * sprintMult * dt;
     const dir = new THREE.Vector3(G.moveDir.x, 0, G.moveDir.z);
     if (dir.length() > 0) {
       dir.normalize();

@@ -21,6 +21,7 @@
     <div class="title">WW III</div>
     <div class="subtitle">Reclaim Your Territory</div>
     <button class="btn" onclick="showScreen('charScreen')">New Game</button>
+    <button class="btn" onclick="showScreen('controlsScreen')">Controls</button>
     <button class="btn" onclick="showScreen('leaderboardScreen')">Leaderboard</button>
     <button class="btn" onclick="showScreen('loreScreen')">Collected Lore</button>
   </div>
@@ -152,6 +153,49 @@
     </div>
     <div id="skillUpgrade" style="margin:8px 0;padding:10px;border:1px solid rgba(212,160,84,0.2);font-size:0.8rem;color:#8a7560"></div>
     <button class="btn" onclick="showScreen('levelScreen')">Next Mission</button>
+  </div>
+</div>
+
+<!-- CONTROLS -->
+<div class="screen" id="controlsScreen">
+  <div class="screen-bg"></div>
+  <div class="screen-content scroll-area">
+    <div class="section-title">Controls</div>
+    <div class="controls-section">
+      <div class="controls-heading">Movement</div>
+      <div class="controls-row"><span class="key">W A S D</span><span>Move</span></div>
+      <div class="controls-row"><span class="key">Shift</span><span>Sprint (drains stamina)</span></div>
+      <div class="controls-row"><span class="key">Space</span><span>Dodge roll</span></div>
+    </div>
+    <div class="controls-section">
+      <div class="controls-heading">Combat</div>
+      <div class="controls-row"><span class="key">Left Click</span><span>Attack / shoot</span></div>
+      <div class="controls-row"><span class="key">Right Click</span><span>Block (hold)</span></div>
+      <div class="controls-row"><span class="key">F</span><span>Block (keyboard)</span></div>
+      <div class="controls-row"><span class="key">R</span><span>Quick attack</span></div>
+    </div>
+    <div class="controls-section">
+      <div class="controls-heading">Weapons</div>
+      <div class="controls-row"><span class="key">Scroll</span><span>Cycle weapons</span></div>
+      <div class="controls-row"><span class="key">Q</span><span>Next weapon</span></div>
+      <div class="controls-row"><span class="key">1 - 9</span><span>Select weapon slot</span></div>
+    </div>
+    <div class="controls-section">
+      <div class="controls-heading">Other</div>
+      <div class="controls-row"><span class="key">E</span><span>Enter / exit vehicle</span></div>
+      <div class="controls-row"><span class="key">Esc</span><span>Pause</span></div>
+    </div>
+    <div class="controls-section" style="margin-top:1.5em">
+      <div class="controls-heading">Touch (Mobile)</div>
+      <div class="controls-row"><span class="key" style="min-width:80px">Joystick</span><span>Move (bottom left)</span></div>
+      <div class="controls-row"><span class="key" style="min-width:80px">Swipe</span><span>Look around</span></div>
+      <div class="controls-row"><span class="key" style="min-width:80px">ATK</span><span>Attack</span></div>
+      <div class="controls-row"><span class="key" style="min-width:80px">BLK</span><span>Block (hold)</span></div>
+      <div class="controls-row"><span class="key" style="min-width:80px">DDG</span><span>Dodge</span></div>
+      <div class="controls-row"><span class="key" style="min-width:80px">RNG</span><span>Switch to ranged + fire</span></div>
+    </div>
+    <br>
+    <button class="btn" onclick="showScreen('menuScreen')">Back</button>
   </div>
 </div>
 
