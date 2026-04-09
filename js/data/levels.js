@@ -1,0 +1,132 @@
+// Level definitions and lore entries — pure data.
+export const LEVELS = [
+  { name: "First Contact", env: "city", enemies: 5, story: [
+    "G: Greg, this is G. Comms check.",
+    "GREG: Loud and clear.",
+    "G: Raiders crossed the eastern border at 0400. They've overrun the outer district. You're the closest operative.",
+    "GREG: Just me?",
+    "G: Just you. Neutralize all hostiles. Reclaim the gate.",
+    "GREG: Understood. Moving to contact."]},
+  { name: "Market District", env: "city", enemies: 6, story: [
+    "G: Solid work at the gates. Satellite shows hostiles fortifying the old market.",
+    "GREG: Numbers?",
+    "G: Six confirmed. Possibly more inside the structures. Watch the rooftops.",
+    "GREG: Copy. Going loud."]},
+  { name: "Dust Highway", env: "desert", enemies: 7, story: [
+    "G: Intercepted raider comms. Armed convoy heading south on the old highway.",
+    "GREG: Ambush point?",
+    "G: Negative. Open terrain. Head-on engagement.",
+    "G: Greg... these ones are organized. Someone is commanding them. This is bigger than we thought."]},
+  { name: "Canyon Pass", env: "canyon", enemies: 7, story: [
+    "G: The highway leads into a canyon. Narrow passage. Raiders have fortified both cliff walls.",
+    "GREG: Perfect chokepoint.",
+    "G: For them or for you. Use the rock cover. They'll have the high ground.",
+    "GREG: I'll take it from them.",
+    "G: Watch for snipers on the ridgeline."]},
+  { name: "The Overpass", env: "desert", enemies: 8, boss: true, story: [
+    "G: The overpass checkpoint. Heavily fortified. A lieutenant called Ironjaw runs it. Ex-military.",
+    "GREG: One target.",
+    "G: I'm authorizing armor support — your team's tank will be on standby.",
+    "GREG: About time I got some backup.",
+    "G: Take him down, Greg."]},
+  { name: "Desert Airbase", env: "airbase", enemies: 8, story: [
+    "G: Captured airbase thirty klicks south. Raiders are using the runways to fly in supplies and reinforcements.",
+    "GREG: If I take the airbase, I cut their supply line.",
+    "G: Exactly. The hangars are their main storage. Control tower has their comms equipment.",
+    "GREG: I'll shut it all down.",
+    "G: Be careful in the open. The runway is a killzone."]},
+  { name: "Sunken Metro", env: "bunker", enemies: 8, story: [
+    "G: Underground tunnel network beneath sector seven. Raiders are moving troops through the old metro.",
+    "GREG: Tight quarters.",
+    "G: I've been intercepting strange chatter. Something about a 'project' they're guarding.",
+    "GREG: Keep me posted."]},
+  { name: "The Vault", env: "bunker", enemies: 9, story: [
+    "G: Pre-war military stockpile ahead. If they keep these weapons, they'll outgun our entire country.",
+    "GREG: Then they don't keep them.",
+    "G: The chatter I decoded... Greg, they're building something massive.",
+    "GREG: How massive?",
+    "G: Massive enough to end this war in one strike. Clear the vault first."]},
+  { name: "Blackout Refinery", env: "refinery", enemies: 9, story: [
+    "G: Intel shows the raiders seized the old refinery complex. They're using it to fuel their war machines.",
+    "GREG: Oil means vehicles. Vehicles mean armor.",
+    "G: Correct. Destroy their fuel reserves. Use the catwalks for elevation advantage.",
+    "GREG: What about the storage tanks?",
+    "G: ...Try not to blow yourself up."]},
+  { name: "Ash Fields", env: "desert", enemies: 9, story: [
+    "GREG: G, come in.",
+    "...",
+    "GREG: G, do you copy?",
+    "...",
+    "GREG: Comms are dead. Found G's last transmission on a dead drop. There was gunfire. Then static.",
+    "GREG: G is gone. I'm on my own now.",
+    "GREG: But the mission doesn't stop."]},
+  { name: "Ghost Train", env: "trainyard", enemies: 10, story: [
+    "GREG: An old rail junction. Derailed cars everywhere.",
+    "GREG: G's notes mentioned the raiders using trains to move heavy equipment. This must be the hub.",
+    "GREG: Overturned locomotive blocking the main line. They've turned this graveyard into a fortress.",
+    "GREG: I'll pick them apart, car by car."]},
+  { name: "Tower Block", env: "city", enemies: 10, boss: true, story: [
+    "GREG: No handler. No intel. Just me and fifteen floors of hostile territory.",
+    "GREG: G's last report mentioned a captain called Blackout running this sector.",
+    "GREG: Tank support rolling in. Floor by floor. Let's go."]},
+  { name: "The Depths", env: "bunker", enemies: 10, story: [
+    "GREG: Found it. Deep underground.",
+    "GREG: It's a machine. Massive. Bipedal. Military-grade armor.",
+    "GREG: A war mech. Nearly operational.",
+    "GREG: The commander behind this — General Kraw. Ex-coalition forces.",
+    "GREG: I need to reach it before they power it up."]},
+  { name: "Iron Tide", env: "ocean", enemies: 11, story: [
+    "GREG: Intercepted a raider naval frequency. They're moving the mech's core component by sea.",
+    "GREG: I've commandeered a battleship. If they want the core, they'll have to board me and take it.",
+    "GREG: Storm rolling in. Visibility dropping. Perfect.",
+    "GREG: Let them come. I've got two main batteries and all the ammo in the world.",
+    "GREG: This ship is my fortress tonight."]},
+  { name: "Dead Zone", env: "desert", enemies: 11, story: [
+    "GREG: The dead zone. Radiation off the charts.",
+    "GREG: Wait. These comms logs... this can't be right.",
+    "GREG: G's encryption key. On a raider terminal. Dated AFTER the day G went silent.",
+    "GREG: G isn't dead.",
+    "GREG: G has been feeding them our positions. Everything.",
+    "GREG: ...Not anymore."]},
+  { name: "Broken Dam", env: "dam", enemies: 12, story: [
+    "GREG: G's trail leads to the old hydroelectric dam. Makes sense — the mech needs massive power to activate.",
+    "GREG: They've turned the plant into a charging station. Turbines are running at full capacity.",
+    "GREG: If I destroy the dam's power systems, the mech stays dead.",
+    "GREG: But first I need to fight through an army to get there."]},
+  { name: "Highway to Hell", env: "highway", enemies: 12, story: [
+    "GREG: Collapsed overpass network. Raiders have turned the wreckage into a maze.",
+    "GREG: G's command center is on the other side. He knows I'm coming.",
+    "GREG: Concrete barriers. Destroyed vehicles. Rubble everywhere. A hundred places to hide.",
+    "GREG: Good. I like close quarters."]},
+  { name: "The Betrayer", env: "city", enemies: 14, boss: true, story: [
+    "G: Hello, Greg.",
+    "GREG: So you're alive.",
+    "G: I was never in danger. I chose the winning side. Kraw offered me a seat at the table.",
+    "GREG: Every mission. Every target. You set it all up.",
+    "G: And you performed beautifully. But now you know too much.",
+    "GREG: Then I'm coming for you first.",
+    "GREG: Tank support — deploy. This one's personal."]},
+  { name: "Iron Colossus", env: "city", enemies: 16, boss: true, story: [
+    "GREG: G is down. But the mech is online. General Kraw is inside it.",
+    "GREG: Fifty tons of armor. Plasma cannons. Missile pods. One pilot.",
+    "GREG: Command, if anyone can hear this — the mech is active. I'm engaging.",
+    "GREG: I know I'm not walking away from this one.",
+    "GREG: But neither is he.",
+    "GREG: For everyone they took from us. For the country.",
+    "GREG: Greg, signing off."]},
+];
+
+export const LORE_ENTRIES = [
+  { title: "Old Photograph", text: "A faded photo of a family picnic. The park in the background no longer exists." },
+  { title: "Military Orders", text: "Classified document dated three days before the collapse. 'Evacuate all personnel...' The rest is burned." },
+  { title: "Child's Drawing", text: "Stick figures holding hands under a yellow sun. Written below: 'my family by Emma age 6'" },
+  { title: "Radio Log", text: "Static-filled recording: '...anyone still out there? We're at coordinates... signal lost...'" },
+  { title: "Raider's Journal", text: "We didn't choose this. When the food ran out, it was us or them. I hate what I've become." },
+  { title: "Lab Report", text: "Water contamination levels exceed safe thresholds by 400%. Recommend immediate evacuation." },
+  { title: "Love Letter", text: "If you find this, know that I waited as long as I could. I'll be heading north. Find me." },
+  { title: "Dog Tags", text: "Pvt. Rodriguez, M. Service number partially scratched off. Still warm." },
+  { title: "Map Fragment", text: "Hand-drawn map showing a settlement to the north marked 'SAFE?' in red ink." },
+  { title: "Final Broadcast", text: "This is Emergency Broadcast System. This is not a test. Seek shelter immediately. God help us all." },
+  { title: "Warlord's Manifesto", text: "The old world failed us. We build something new. Strength is the only currency that matters now." },
+  { title: "Survivor's Oath", text: "Scratched into concrete: 'We will rebuild. We will remember. We will not fall again.'" },
+];

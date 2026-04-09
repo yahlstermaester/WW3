@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  background: #1a1612; color: #c4a882; font-family: 'Rajdhani', sans-serif;
+  overflow: hidden; width: 100vw; height: 100vh; cursor: crosshair;
+}
+canvas { display: block; }
+
+/* SCREENS */
+.screen { position: fixed; inset: 0; display: none; z-index: 100; flex-direction: column; align-items: center; justify-content: center; }
+.screen.active { display: flex; }
+.screen-bg { position: absolute; inset: 0; background: linear-gradient(180deg, #0d0a07 0%, #1a1612 40%, #2a1f15 100%); }
+.screen-content { position: relative; z-index: 1; text-align: center; width: 90%; max-width: 500px; }
+
+/* TITLE */
+.title { font-family: 'Share Tech Mono', monospace; font-size: clamp(3rem, 10vw, 6rem); color: #d4a054; text-shadow: 0 0 30px rgba(212,160,84,0.4), 0 4px 8px rgba(0,0,0,0.8); letter-spacing: 0.3em; margin-bottom: 0.2em; }
+.subtitle { font-size: clamp(0.8rem, 2.5vw, 1.1rem); color: #8a7560; letter-spacing: 0.5em; text-transform: uppercase; margin-bottom: 2em; }
+
+/* BUTTONS */
+.btn { 
+  display: block; width: 100%; padding: 14px 24px; margin: 8px 0; background: rgba(212,160,84,0.08);
+  border: 1px solid rgba(212,160,84,0.25); color: #d4a054; font-family: 'Rajdhani', sans-serif;
+  font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.2s; text-align: center;
+}
+.btn:hover, .btn:active { background: rgba(212,160,84,0.18); border-color: rgba(212,160,84,0.5); transform: scale(1.02); }
+.btn.small { width: auto; display: inline-block; padding: 10px 20px; font-size: 0.9rem; }
+.btn.selected { background: rgba(212,160,84,0.25); border-color: #d4a054; box-shadow: 0 0 15px rgba(212,160,84,0.2); }
+
+.section-title { font-size: 1.3rem; color: #d4a054; letter-spacing: 0.2em; margin: 1.5em 0 0.5em; text-transform: uppercase; }
+.desc { color: #8a7560; font-size: 0.85rem; margin-bottom: 1em; }
+
+.scroll-area { max-height: 70vh; overflow-y: auto; padding-right: 5px; }
+.scroll-area::-webkit-scrollbar { width: 4px; }
+.scroll-area::-webkit-scrollbar-thumb { background: rgba(212,160,84,0.3); }

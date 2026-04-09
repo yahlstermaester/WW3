@@ -1,0 +1,13 @@
+/* TOUCH CONTROLS */
+.touch-controls { position: fixed; bottom: 20px; z-index: 55; display: none; pointer-events: auto; }
+.touch-controls.active { display: flex; }
+.joystick-area { position: fixed; bottom: 20px; left: 20px; width: 120px; height: 120px; border-radius: 50%; background: rgba(212,160,84,0.1); border: 2px solid rgba(212,160,84,0.2); pointer-events: auto; z-index: 55; display: none; }
+.joystick-area.active { display: block; }
+.joystick-knob { width: 40px; height: 40px; border-radius: 50%; background: rgba(212,160,84,0.3); position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.touch-btn { position: fixed; z-index: 55; pointer-events: auto; display: none; width: 60px; height: 60px; border-radius: 50%; border: 2px solid rgba(212,160,84,0.3); background: rgba(212,160,84,0.1); font-family: 'Rajdhani', sans-serif; color: #d4a054; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; }
+.touch-btn.active { display: flex; align-items: center; justify-content: center; }
+#btn-attack { bottom: 30px; right: 30px; width: 70px; height: 70px; background: rgba(180,60,60,0.2); border-color: rgba(180,60,60,0.4); }
+#btn-block { bottom: 110px; right: 30px; }
+#btn-dodge { bottom: 30px; right: 110px; }
+#btn-ranged { bottom: 110px; right: 110px; }
+#btn-weapon { bottom: 70px; right: 185px; font-size: 1.2rem; width: 45px; height: 45px; }
