@@ -18,8 +18,14 @@ export function setupInput() {
     G.keys[e.code] = true;
     if (!G.inGame) return;
 
-    if (e.code === 'Escape') togglePause();
-    if (e.code === 'Space') dodge();
+    // Escape toggles pause — skip auto-repeat so holding Esc doesn't flicker
+    if (e.code === 'Escape' && !e.repeat) togglePause();
+    // Space = jump (only when on the ground, i.e. not already mid-air)
+    if (e.code === 'Space' && G.jumpOffset === 0 && !G.driving) {
+      G.jumpVelocity = 8;
+    }
+    // C = dodge roll (moved from Space)
+    if (e.code === 'KeyC') dodge();
     if (e.code === 'KeyF') G.blocking = true;
     if (e.code === 'KeyE') toggleVehicle();
     if (e.code === 'KeyR') attack(); // alt fire / quick-melee fallback

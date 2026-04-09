@@ -53,6 +53,8 @@ export function launchLevel() {
   G.blocking = false;
   G.attackCooldown = 0;
   G.dodgeCooldown = 0;
+  G.jumpOffset = 0;
+  G.jumpVelocity = 0;
   
   // Spawn enemies
   const diffMult = [1.5, 2, 3.5][G.difficulty];

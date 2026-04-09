@@ -115,7 +115,15 @@ export function update(dt) {
         if (topY > floorY && topY < G.camera.position.y + 1) floorY = topY;
       }
     });
-    G.camera.position.y = floorY + 1.7;
+    // Jump physics — vertical velocity + gravity, layered on top of floor height.
+    // jumpOffset is the height above the floor; jumpVelocity is the current vertical speed.
+    G.jumpVelocity -= 20 * dt; // gravity pulls down
+    G.jumpOffset += G.jumpVelocity * dt;
+    if (G.jumpOffset <= 0) {
+      G.jumpOffset = 0;
+      G.jumpVelocity = 0;
+    }
+    G.camera.position.y = floorY + 1.7 + G.jumpOffset;
     G.camera.rotation.order = 'YXZ';
     G.camera.rotation.y = G.lookDir.y;
     G.camera.rotation.x = G.lookDir.x;
