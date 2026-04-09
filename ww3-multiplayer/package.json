@@ -1,0 +1,21 @@
+{
+  "name": "ww3-multiplayer",
+  "version": "1.0.0",
+  "description": "WW III - Multiplayer post-apocalyptic FPS built with Next.js + Three.js + Socket.io",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "next": "^14.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "three": "^0.162.0",
+    "uuid": "^9.0.0"
+  }
+}

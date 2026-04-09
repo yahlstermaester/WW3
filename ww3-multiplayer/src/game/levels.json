@@ -1,0 +1,14 @@
+[
+  { "name": "Broken Gates", "env": "city", "enemies": 5, "story": ["COMMAND: The eastern gate has been breached.", "COMMAND: Clear them out. Reclaim what's ours.", "YOU: Copy that. Moving in."] },
+  { "name": "Market District", "env": "city", "enemies": 6, "story": ["COMMAND: Push deeper into the market.", "YOU: Multiple hostiles ahead.", "COMMAND: Engage at will."] },
+  { "name": "Dust Highway", "env": "desert", "enemies": 7, "story": ["COMMAND: Raider convoy on the old highway.", "YOU: I see vehicles.", "COMMAND: Take them down."] },
+  { "name": "The Overpass", "env": "desert", "enemies": 8, "boss": true, "story": ["COMMAND: Their lieutenant runs the overpass.", "YOU: One lieutenant. Got it.", "COMMAND: Don't underestimate him."] },
+  { "name": "Sunken Metro", "env": "bunker", "enemies": 8, "story": ["COMMAND: Tunnel access found.", "YOU: It's dark down here.", "COMMAND: Light them up."] },
+  { "name": "The Vault", "env": "bunker", "enemies": 9, "story": ["COMMAND: Their weapons cache.", "YOU: Heavy fortification.", "COMMAND: Push through."] },
+  { "name": "Ash Fields", "env": "desert", "enemies": 9, "story": ["COMMAND: Nothing grows here anymore.", "YOU: Movement in the haze.", "COMMAND: Stay sharp."] },
+  { "name": "Tower Block", "env": "city", "enemies": 10, "boss": true, "story": ["COMMAND: A captain leads the tower.", "YOU: Floor by floor.", "COMMAND: Watch every corner."] },
+  { "name": "The Depths", "env": "bunker", "enemies": 10, "story": ["COMMAND: Something big below.", "YOU: More raiders?", "COMMAND: Their best fighters."] },
+  { "name": "Dead Zone", "env": "desert", "enemies": 11, "story": ["COMMAND: Radiation is high.", "YOU: Why would anyone be here?", "COMMAND: Desperation."] },
+  { "name": "The Citadel", "env": "city", "enemies": 12, "boss": true, "story": ["COMMAND: The Citadel. Their main base.", "YOU: Everything has led to this.", "COMMAND: End this. Reclaim our territory."] },
+  { "name": "Aftermath", "env": "city", "enemies": 14, "story": ["COMMAND: Loyalists remain.", "YOU: Mopping up.", "COMMAND: Cornered animals fight hardest."] }
+]
